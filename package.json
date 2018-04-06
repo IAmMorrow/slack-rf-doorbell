@@ -1,0 +1,56 @@
+{
+  "name": "slack-rf-doorbell",
+  "version": "1.0.0",
+  "description": "A Simple Slack RFX based doorbell",
+  "license": "MIT",
+  "repository": "weackd/slack-rf-doorbell",
+  "author": {
+    "name": "Hugo Morosini",
+    "email": "hugo.morosini@gmail.com",
+    "url": "http://github.com/revolunet"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "readme": "node ./node_modules/.bin/node-readme",
+    "zuul": "./node_modules/.bin/zuul --local --open -- spec/**/*.spec.js",
+    "build": "npm run readme && npx babel -d ./dist ./src",
+    "publish": "git push && git push --tags && npm publish"
+  },
+  "main": "dist/index.js",
+  "keywords": [
+    "node",
+    "babel",
+    "test",
+    "tape",
+    "boilerplate"
+  ],
+  "files": [
+    "dist/*",
+    "README.md",
+    "LICENCE"
+  ],
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "*",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-tape-runner": "*",
+    "babelify": "7.2.0",
+    "eslint": "*",
+    "eslint-config-airbnb": "*",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "node-readme": "^0.1.8",
+    "tap-spec": "^4.0.2",
+    "tape": "^4.0.0",
+    "zuul": "^3.8.0"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "rfxcom": "^1.0.3",
+    "slack": "^11.0.0"
+  }
+}
