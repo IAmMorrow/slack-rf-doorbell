@@ -13,6 +13,7 @@
     "node": ">=0.10.0"
   },
   "scripts": {
+    "tunnel": "npx lt --port 8765 --subdomain slack-rfx-doorbell",
     "readme": "node ./node_modules/.bin/node-readme",
     "zuul": "./node_modules/.bin/zuul --local --open -- spec/**/*.spec.js",
     "build": "npm run readme && npx babel -d ./dist ./src",
@@ -50,6 +51,9 @@
   },
   "dependencies": {
     "bluebird": "^3.5.1",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "localtunnel": "^1.9.0",
     "rfxcom": "^1.0.3",
     "slack": "^11.0.0"
   }

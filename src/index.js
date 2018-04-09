@@ -13,7 +13,8 @@ rfxcom.on('ring', onRing);
 rfxcom.on('door', onDoor);
 
 async function start() {
-  await rfxcom.connect('/dev/ttyUSB0');
+  await slack.test();
+//  await rfxcom.connect('/dev/ttyUSB0');
 }
 
 start();
