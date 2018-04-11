@@ -5,7 +5,7 @@ import routes from './routes';
 
 const app = express();
 
-app.use(bodyParser.json());
+app.use(bodyParser.json({ type: '*/json', strict: false }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(routes);
 

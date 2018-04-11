@@ -18,7 +18,3 @@ async function start() {
 }
 
 start();
-
-(function wait() {
-  if (1) setTimeout(wait, 1000);
-}());

@@ -50,6 +50,7 @@ Package | Version | Dev
 [slack](https://www.npmjs.com/package/slack) | ^11.0.0 | ✖
 [babel-cli](https://www.npmjs.com/package/babel-cli) | ^6.26.0 | ✔
 [babel-eslint](https://www.npmjs.com/package/babel-eslint) | * | ✔
+[babel-plugin-transform-object-rest-spread](https://www.npmjs.com/package/babel-plugin-transform-object-rest-spread) | ^6.26.0 | ✔
 [babel-polyfill](https://www.npmjs.com/package/babel-polyfill) | ^6.26.0 | ✔
 [babel-preset-env](https://www.npmjs.com/package/babel-preset-env) | ^1.6.1 | ✔
 [babel-tape-runner](https://www.npmjs.com/package/babel-tape-runner) | * | ✔
