@@ -1,23 +1,38 @@
 import Slack from 'slack';
 import './http';
 
-import { ring } from './messages';
+import { ring, completed } from './messages';
 
 export default class SlackService {
   constructor(conf) {
     const {
       token,
+      channel,
     } = conf;
     this.slack = new Slack({ token });
+    this.channel = channel;
+    this.lastMessage = null;
   }
 
-  async test() {
+  async sendRingMessage() {
     const result = await this.slack.chat.postMessage({
       as_user: true,
-      channel: 'U7L91A73P',
+      channel: this.channel,
       ...ring(),
     });
-    console.log('done', result);
+    this.lastMessage = result;
+  }
+
+  async complete() {
+    if (this.lastMessage) {
+      await this.slack.chat.update({
+        as_user: true,
+        channel: this.lastMessage.channel,
+        ts: this.lastMessage.message.ts,
+        ...completed(),
+      });
+      this.lastMessage = null;
+    }
   }
 }
 // const bot = new Slack({ token });

@@ -1,7 +1,16 @@
+import moment from 'moment';
+import assets from './assets';
+
+
+const randomizeAsset = (name) => {
+  const asset = assets[Math.floor(Math.random() * assets.length)];
+  return asset.replace('%NAME%', name);
+};
+
 export const onit = user => ({
   attachments: [
     {
-      text: `<@${user.id}> y va !`,
+      text: randomizeAsset(`<@${user.id}>`),
     },
   ],
 });
@@ -15,7 +24,7 @@ export const sag = () => ({
 });
 
 export const ring = () => ({
-  text: "Quelqu'un sonne à la porte !",
+  text: "<!here> Quelqu'un sonne à la porte !",
   attachments: [
     {
       text: 'La porte est fermée, ouverture nécéssaire !',
@@ -27,13 +36,24 @@ export const ring = () => ({
           type: 'button',
           value: 'onit',
         },
-        {
-          name: 'onit',
-          text: 'LESLIE !',
-          type: 'button',
-          value: 'leslito',
-        },
+        // {
+        //   name: 'onit',
+        //   text: 'LESLIE !',
+        //   type: 'button',
+        //   value: 'leslito',
+        // },
       ],
+    },
+  ],
+});
+
+export const completed = () => ({
+  text: "Quelqu'un sonne à la porte !",
+  attachments: [
+    {
+      text: 'La porte à été ouverte !',
+      footer: `Porte ouverte à ${moment().format('HH:mm:ss')}`,
+      footer_icon: 'http://www.egoleap.com/wp-content/uploads/2015/07/checkmark-blue.png',
     },
   ],
 });

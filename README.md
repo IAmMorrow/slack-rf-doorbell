@@ -46,6 +46,7 @@ Package | Version | Dev
 [body-parser](https://www.npmjs.com/package/body-parser) | ^1.18.2 | ✖
 [express](https://www.npmjs.com/package/express) | ^4.16.3 | ✖
 [localtunnel](https://www.npmjs.com/package/localtunnel) | ^1.9.0 | ✖
+[moment](https://www.npmjs.com/package/moment) | ^2.22.0 | ✖
 [rfxcom](https://www.npmjs.com/package/rfxcom) | ^1.0.3 | ✖
 [slack](https://www.npmjs.com/package/slack) | ^11.0.0 | ✖
 [babel-cli](https://www.npmjs.com/package/babel-cli) | ^6.26.0 | ✔
